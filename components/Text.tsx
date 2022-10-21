@@ -1,0 +1,100 @@
+import Image, { StaticImageData } from "next/image";
+import clsx from "clsx";
+import { useEffect, useState } from "react";
+import istanbul from "/public/istanbul.jpg";
+import panda from "/public/panda.jpg";
+export function Textt() {
+	const [isShown, setIsshown] = useState(false);
+	const [pic, setPic] = useState(undefined);
+	const [hovered, setHovered] = useState(false);
+
+	const placeHolderName = " Muhammed Furkan Ülgen";
+
+	function mouseOn() {
+		if (!isShown) {
+			setHovered(true);
+			setPic(istanbul);
+		}
+	}
+	console.log("sss", isShown);
+	function picc() {
+		setIsshown(true);
+		const timer = setTimeout(() => {
+			setPic(undefined);
+			setHovered(false);
+		}, 1200);
+		return () => clearTimeout(timer);
+	}
+
+	function flickerLetter(text: string) {
+		return (
+			<span
+				style={{
+					color: `hsla(${Math.random() * 360}, 100%, 80%, 1)`,
+					animation: `text-flicker-in-glow ${Math.random() * 4}s linear both `,
+				}}
+			>
+				{text}
+			</span>
+		);
+	}
+
+	function clickHandler(e: any) {
+		e.target.style.textShadow = ``;
+
+		e.target.style.animation = "blink 4s infinite alternate both";
+		e.target.style.color = `hsla(${Math.random() * 360}, 100%, 80%, 1)`;
+	}
+
+	return (
+		<div className="flex flex-col  px-10 font-abc  z-0  gap-5 ">
+			<div
+				className={
+					pic == undefined ? "opacity-90 duration-300" : "duration-300 opacity-10"
+				}
+			>
+				{placeHolderName.split("").map((x) => (
+					<button
+						onClick={(e) => clickHandler(e)}
+						// style={{''}}
+						className="tracking-wider hover:scale-125 duration-150 shadow-sm font-Motonotn text-6xl"
+					>
+						{flickerLetter(x)}
+					</button>
+				))}
+			</div>
+			<p className="text-white"></p>
+			<div
+				className={clsx(
+					"absolute rounded-lg h-screen w-screen top-0 right-0  -z-10",
+					hovered ? "  opacity-100 duration-700 " : "  opacity-0 duration-700 "
+				)}
+			>
+				<Image src={pic} alt="" id="image" layout="fill" className="duration-300" />
+			</div>
+
+			<div
+				className={clsx(
+					"flex  flex-col  text-start ",
+					pic == undefined ? "opacity-100 duration-300" : "duration-300 opacity-20 ",
+					isShown ? "hidden" : ""
+				)}
+			>
+				<p className="text-white self-start text-4xl">
+					Hey there, I am Furkan a Software Developer from
+					<span
+						onMouseEnter={() => mouseOn()}
+						onMouseLeave={() => picc()}
+						className={clsx("underline   ml-4 underline-offset-8 decoration-2")}
+					>
+						Istanbul
+					</span>
+				</p>
+				<p className="text-blue-200 mt-2 text-3xl">
+					I am a motivated, dedicated learner who just discovered his love towards
+					coding and looking forward to learn more and more
+				</p>
+			</div>
+		</div>
+	);
+}
