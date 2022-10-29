@@ -13,6 +13,7 @@ export function Textt() {
 	function mouseOn() {
 		if (!isShown) {
 			setHovered(true);
+			//@ts-ignore
 			setPic(istanbul);
 		}
 	}
@@ -47,10 +48,10 @@ export function Textt() {
 	}
 
 	return (
-		<div className="flex flex-col  px-10 font-abc  z-0  gap-5 ">
+		<div className="flex flex-col  px-10 font-abc   gap-5 ">
 			<div
 				className={
-					pic == undefined ? "opacity-90 duration-300" : "duration-300 opacity-10"
+					pic == undefined ? "opacity-90 duration-300" : "duration-300 opacity-0"
 				}
 			>
 				{placeHolderName.split("").map((x) => (
@@ -64,31 +65,16 @@ export function Textt() {
 				))}
 			</div>
 			<p className="text-white"></p>
-			<div
-				className={clsx(
-					"absolute rounded-lg h-screen w-screen top-0 right-0  -z-10",
-					hovered ? "  opacity-100 duration-700 " : "  opacity-0 duration-700 "
-				)}
-			>
-				<Image src={pic} alt="" id="image" layout="fill" className="duration-300" />
-			</div>
 
 			<div
 				className={clsx(
 					"flex  flex-col  text-start ",
-					pic == undefined ? "opacity-100 duration-300" : "duration-300 opacity-20 ",
+					pic == undefined ? "opacity-100 duration-300" : "duration-300 opacity-0 ",
 					isShown ? "hidden" : ""
 				)}
 			>
 				<p className="text-white self-start text-4xl">
-					Hey there, I am Furkan a Software Developer from
-					<span
-						onMouseEnter={() => mouseOn()}
-						onMouseLeave={() => picc()}
-						className={clsx("underline   ml-4 underline-offset-8 decoration-2")}
-					>
-						Istanbul
-					</span>
+					Hey there, I am Furkan a Software Developer from Istanbul
 				</p>
 				<p className="text-blue-200 mt-2 text-3xl">
 					I am a motivated, dedicated learner who just discovered his love towards

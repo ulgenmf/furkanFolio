@@ -7,11 +7,13 @@ module.exports = {
 				Major: ["Major", "monospace"],
 				Motonotn: ["Monoton", " cursive"],
 				abc: ["Fuzzy Bubbles", "cursive"],
+				hand: ["Arizonia", "cursive"],
 			},
 			colors: {
 				steam: "#10141F",
 			},
 		},
 	},
+
 	plugins: [],
 };
