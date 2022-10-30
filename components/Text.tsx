@@ -73,13 +73,10 @@ export function Textt() {
 					isShown ? "hidden" : ""
 				)}
 			>
-				<p className="text-white self-start text-4xl">
+				{/* <p className="text-white self-start text-4xl">
 					Hey there, I am Furkan a Software Developer from Istanbul
 				</p>
-				<p className="text-blue-200 mt-2 text-3xl">
-					I am a motivated, dedicated learner who just discovered his love towards
-					coding and looking forward to learn more and more
-				</p>
+				<p className="text-blue-200 mt-2 text-3xl"></p> */}
 			</div>
 		</div>
 	);

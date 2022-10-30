@@ -65,8 +65,27 @@ export default function a() {
 							Search
 						</button>
 					</div>
+					<label
+						htmlFor="default-range"
+						className="block  text-lg  text-center my-5  text-white dark:text-gray-300"
+					>
+						Post Limit
+						<br />
+						{limit}
+					</label>
+					<input
+						onInput={(e) => setLimit(e.target)}
+						id="e"
+						type="range"
+						value={limit}
+						min={10}
+						max={100}
+						step={5}
+						className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+					/>
 				</form>
 			</div>
+
 			<div className="grid grid-cols-3 items-center  grid-rows-3 p-1 grid-flow-col overflow-auto gap-2  ">
 				{post
 					.filter((post: any) => post.data.post_hint === "image")
