@@ -28,7 +28,6 @@ export function MyName() {
 			{placeHolderName.split("").map((x) => (
 				<button
 					onClick={(e) => clickHandler(e)}
-					// style={{''}}
 					className="tracking-wider hover:scale-125 duration-150 shadow-sm font-Motonotn text-6xl"
 				>
 					{flickerLetter(x)}
