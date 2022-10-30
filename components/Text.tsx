@@ -55,13 +55,13 @@ export function Textt() {
 				}
 			>
 				{placeHolderName.split("").map((x) => (
-					<button
+					<a
 						onClick={(e) => clickHandler(e)}
 						// style={{''}}
-						className="tracking-wider hover:scale-125 duration-150 shadow-sm font-Motonotn text-6xl"
+						className="tracking-wider sm:text- md:text-6xl hover:scale-125 duration-150 shadow-sm font-Motonotn "
 					>
 						{flickerLetter(x)}
-					</button>
+					</a>
 				))}
 			</div>
 			<p className="text-white"></p>
