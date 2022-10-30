@@ -58,8 +58,7 @@ export function Textt() {
 					<a
 						onClick={(e) => clickHandler(e)}
 						// style={{''}}
-						className="tracking-wider  outline-none cursor-pointer select-none hover:scale-125 duration-150 shadow-sm  font-Motonotn 
-						text-3xl sm:text-6xl"
+						className="tracking-wider text-4xl md:text-6xl  select-none cursor-crosshair text-center hover:scale-125 duration-150 shadow-sm font-Motonotn "
 					>
 						{flickerLetter(x)}
 					</a>
