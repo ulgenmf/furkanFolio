@@ -19,35 +19,10 @@ const Home: NextPage = () => {
 			}, 1000);
 		}, 10);
 	}
-	const elementRef = useRef(null);
-
-	useEffect(() => {
-		function handleScroll() {
-			// Get the current scroll position
-			const scrollTop = window.pageYOffset;
-			console.log("1s");
-			// Calculate the new font size based on the scroll position
-			const size = 1 - scrollTop / 1000;
-			console.log("2");
-			// Update the element's style
-			elementRef.current.style.fontSize = `${size}em`;
-		}
-
-		// Add the scroll event listener
-		window.addEventListener("keydown", handleScroll);
-
-		// Remove the event listener when the component unmounts
-		return () => {
-			window.removeEventListener("keydown", handleScroll);
-		};
-	}, []);
 
 	return (
 		<>
-			<div
-				ref={elementRef}
-				className="flex h-screen   justify-center gap-10 bg-black  text-center flex-col  w-screen"
-			>
+			<div className="flex h-screen   justify-center gap-10 bg-black  text-center flex-col  w-screen">
 				<div className="flex flex-col  gap-2 ">
 					<div
 						className={`bg-white bg-opacity-90 font-sourceSerif  gap-3  mx-10 text-4xl p-10 rounded-xl top-[20%]  flex-col  duration-1000 fixed z-10  text-center ${opacity} `}
@@ -69,7 +44,7 @@ const Home: NextPage = () => {
 							Lets launch it
 						</button>
 					</div>
-					<Textt ref={elementRef} textDipslay={show} fontSize={fontSize} />
+					<Textt textDipslay={show} fontSize={fontSize} />
 				</div>
 			</div>
 		</>

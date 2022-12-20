@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { useEffect, useState } from "react";
 import istanbul from "/public/istanbul.jpg";
 import panda from "/public/panda.jpg";
-export function Textt({ textDipslay = "flex", fontSize }) {
+export function Textt({ textDipslay = "flex", fontSize }: any) {
 	const [isShown, setIsshown] = useState(false);
 	const [pic, setPic] = useState(undefined);
 	const [hovered, setHovered] = useState(false);
