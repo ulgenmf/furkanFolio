@@ -12,6 +12,7 @@ module.exports = {
 				Motonotn: ["Monoton", " cursive"],
 				abc: ["Fuzzy Bubbles", "cursive"],
 				hand: ["Arizonia", "cursive"],
+				sourceSerif: ["Source Serif Pro", "serif"],
 			},
 			colors: {
 				steam: "#10141F",

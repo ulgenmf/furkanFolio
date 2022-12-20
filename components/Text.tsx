@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { useEffect, useState } from "react";
 import istanbul from "/public/istanbul.jpg";
 import panda from "/public/panda.jpg";
-export function Textt() {
+export function Textt({ textDipslay = "flex", fontSize }) {
 	const [isShown, setIsshown] = useState(false);
 	const [pic, setPic] = useState(undefined);
 	const [hovered, setHovered] = useState(false);
@@ -48,7 +48,10 @@ export function Textt() {
 	}
 
 	return (
-		<div className="flex flex-col  px-10 font-abc   gap-5 ">
+		<div
+			style={{ fontSize: `${fontSize}em` }}
+			className={`${textDipslay} flex-col  px-10 font-abc   gap-5`}
+		>
 			<div
 				className={
 					pic == undefined ? "opacity-90 duration-300" : "duration-300 opacity-0"
@@ -58,7 +61,7 @@ export function Textt() {
 					<a
 						onClick={(e) => clickHandler(e)}
 						// style={{''}}
-						className="tracking-wider text-4xl md:text-6xl  select-none cursor-crosshair text-center hover:scale-125 duration-150 shadow-sm font-Motonotn "
+						className="tracking-wider text-4xl md:text-6xl  select-none cursor-grabbing text-center hover:scale-125 duration-150 shadow-sm font-Motonotn "
 					>
 						{flickerLetter(x)}
 					</a>
